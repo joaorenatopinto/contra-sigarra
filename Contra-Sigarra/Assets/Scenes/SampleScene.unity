@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &564433779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -469,6 +469,7 @@ GameObject:
   - component: {fileID: 1035065095}
   - component: {fileID: 1035065096}
   - component: {fileID: 1035065093}
+  - component: {fileID: 1035065097}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -558,6 +559,7 @@ Transform:
   m_Children:
   - {fileID: 967891172}
   - {fileID: 922300756}
+  - {fileID: 1425499998}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -666,6 +668,21 @@ CircleCollider2D:
   m_Offset: {x: -0.80423135, y: -1.9406604}
   serializedVersion: 2
   m_Radius: 1.5211164
+--- !u!114 &1035065097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035065088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8337188dcc8b3b4590ce991bf7ee918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1425499998}
+  bulletPrefab: {fileID: 5439114650320720718, guid: db66b4fd7f51bc94890b56fb8b859c5e,
+    type: 3}
 --- !u!1 &1310624944
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,4 +713,34 @@ Transform:
   - {fileID: 780462544}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1425499997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425499998}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425499998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425499997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.51, y: 1.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1035065091}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
