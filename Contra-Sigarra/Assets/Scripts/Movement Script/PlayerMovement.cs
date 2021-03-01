@@ -20,7 +20,11 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump")){
             jump = true;
         }
+
+
     }
+
+
 
     void FixedUpdate()
     {

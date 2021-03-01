@@ -7,11 +7,12 @@ public class Enemy : MonoBehaviour
     public int health = 100;
 
     public GameObject deathEffect;
+    public HealthBar healthbar;
 
     public void TakeDamage(int damage) 
     {
         health -= damage;
-
+        healthbar.setHealth(health);
         if (health <= 0)
         {
             StartCoroutine(Die());
