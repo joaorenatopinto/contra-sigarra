@@ -10,7 +10,9 @@ public class Grenade : MonoBehaviour
     public float force = 300f;
     public Vector3 launchOffset;
     public Rigidbody2D rigidBody2D;
-   // public GameObject explosionEffect;
+    public GameObject explosionEffect;
+    public int damage = 50;
+    public LayerMask layerToHit;    
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +24,23 @@ public class Grenade : MonoBehaviour
     }
 
     void Explode(){
-        Debug.Log("boom!");
 
-        // Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(Instantiate(explosionEffect, transform.position, transform.rotation),0.5f);
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, layerToHit);
 
         foreach (Collider2D nearbyObject in colliders)
         {
+            
             Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
             if (rb != null) {
-                
                 Vector2 direction = nearbyObject.transform.position - transform.position;
                 rb.AddForce(direction * force);
+                Enemy enemy = nearbyObject.GetComponent<Enemy>();
+                if(enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                }
             }
         }
         Destroy(gameObject);
