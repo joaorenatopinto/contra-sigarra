@@ -2888,6 +2888,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8344407882261349002, guid: 9fe36be88aff72546ad3f3ff840890b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344407882261349105, guid: 9fe36be88aff72546ad3f3ff840890b4,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8344407882261349107, guid: 9fe36be88aff72546ad3f3ff840890b4,
         type: 3}
       propertyPath: m_Name

@@ -32,9 +32,8 @@ public class Grenade : MonoBehaviour
         {
             Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
             if (rb != null) {
-                Debug.Log("Found one!");
+                
                 Vector2 direction = nearbyObject.transform.position - transform.position;
-
                 rb.AddForce(direction * force);
             }
         }
