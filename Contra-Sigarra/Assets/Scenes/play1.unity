@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 468985359}
   m_Layer: 2
   m_Name: Frog1
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1398,6 +1398,8 @@ MonoBehaviour:
   controller: {fileID: 1035065092}
   Platforms: {fileID: 0}
   runSpeed: 60
+  powerUpTimer: 5
+  deltaPowerUpTimer: 0
 --- !u!61 &1035065095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2888,6 +2890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344407882261349107, guid: 9fe36be88aff72546ad3f3ff840890b4,
+        type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8344407882261349108, guid: 9fe36be88aff72546ad3f3ff840890b4,
         type: 3}
