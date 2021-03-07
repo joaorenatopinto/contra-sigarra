@@ -7,7 +7,7 @@ public class Grenade : MonoBehaviour
     public float delay = 3f;
     public float speed = 0.4f;
     public float radius = 5f;
-    public float force = 700f;
+    public float force = 300f;
     public Vector3 launchOffset;
     public Rigidbody2D rigidBody2D;
    // public GameObject explosionEffect;
@@ -33,9 +33,17 @@ public class Grenade : MonoBehaviour
             Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
             if (rb != null) {
                 Debug.Log("Found one!");
-                rb.AddForce(transform.position * force, ForceMode2D.Impulse);
+                Vector2 direction = nearbyObject.transform.position - transform.position;
+
+                rb.AddForce(direction * force);
             }
         }
         Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

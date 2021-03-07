@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 3
   speed: 4
-  radius: 5
+  radius: 1
   force: 700
   launchOffset: {x: -0.1, y: 0.3, z: 0}
   rigidBody2D: {fileID: 1563102032259274554}
