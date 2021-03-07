@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-
-
-
+    bool PowerUp = false;
+    public float powerUpTimer = 5.0f;
+    public float deltaPowerUpTimer = 0f;
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -30,16 +30,38 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
+        if (deltaPowerUpTimer >= powerUpTimer)
+        {
+            deltaPowerUpTimer = 0f;
+            PowerUp = false;
+        }else if (PowerUp)
+        {
+            deltaPowerUpTimer += Time.fixedDeltaTime;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D hitInfo)
-    {
-        
+    {  
         GameOver gameOver = hitInfo.collider.GetComponent<GameOver>();
         if (gameOver != null)
         {
-            gameOver.gameOverScreen();
-        }  
+            GameOver.gameOverScreen();
+        }
+        // if play collide with enemy and has power up = enemy dies
+        else if (hitInfo.gameObject.tag == "enemy" && PowerUp)
+        {
+            StartCoroutine(hitInfo.gameObject.GetComponent<Enemy>().Die());
+        }
+        // if play collide with enemy and dont have power up = player dies
+        else if (hitInfo.gameObject.tag == "enemy" && !PowerUp)
+        {
+            GameOver.gameOverScreen();
+        }
+        else if (hitInfo.gameObject.tag == "powerUp")
+        {
+            Destroy(hitInfo.gameObject);
+            PowerUp = true;
+        }
     }
 
 

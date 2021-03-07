@@ -460,7 +460,7 @@ MonoBehaviour:
   health: 100
   deathEffect: {fileID: 8073412235421837705, guid: 597e1f3e7502288469b6de73ab7336e3,
     type: 3}
-  powerUpObject: {fileID: 8344407882261349107, guid: 9fe36be88aff72546ad3f3ff840890b4,
+  powerUpObject: {fileID: 2099396654495013523, guid: 6f6a9e9dd5dc62f419c6c024ec48f78c,
     type: 3}
   healthbar: {fileID: 659384924}
 --- !u!58 &468985361
@@ -2944,5 +2944,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8344407882261349109, guid: 9fe36be88aff72546ad3f3ff840890b4,
+        type: 3}
+      propertyPath: powerUpObject
+      value: 
+      objectReference: {fileID: 2099396654495013523, guid: 6f6a9e9dd5dc62f419c6c024ec48f78c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe36be88aff72546ad3f3ff840890b4, type: 3}

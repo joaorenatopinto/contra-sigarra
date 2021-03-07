@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    IEnumerator Die()
+    public IEnumerator Die()
     {
         GameObject deathAnim = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
