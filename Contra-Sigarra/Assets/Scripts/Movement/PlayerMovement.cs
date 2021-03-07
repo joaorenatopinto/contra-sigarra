@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        Debug.Log(hitInfo.collider);
+        
         GameOver gameOver = hitInfo.collider.GetComponent<GameOver>();
         if (gameOver != null)
         {
