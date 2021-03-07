@@ -17,7 +17,7 @@ public class enemyMovement : MonoBehaviour
     void FixedUpdate()
     {
           
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayLine, 3);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayLine, 1);
         if (hit.collider == null)
         {
             
