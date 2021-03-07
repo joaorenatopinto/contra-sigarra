@@ -26,12 +26,13 @@ public class Grenade : MonoBehaviour
 
         // Instantiate(explosionEffect, transform.position, transform.rotation);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
 
-        foreach (Collider nearbyObject in colliders)
+        foreach (Collider2D nearbyObject in colliders)
         {
             Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
             if (rb != null) {
+                Debug.Log("Found one!");
                 rb.AddForce(transform.position * force, ForceMode2D.Impulse);
             }
         }
