@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
             PowerUp = true;
             Vector2 powerUpPos = new Vector2(transform.position.x, transform.position.y + 1);
             PowerUpObject = Instantiate(PowerUpPrefab, powerUpPos, Quaternion.identity);
-            PowerUpObject.transform.parent = transform;
+            PowerUpObject.transform.SetParent(transform);
             PowerUpObject.transform.GetChild(0).GetComponent<PowerUp>().setTime(1);
             Destroy(PowerUpObject, powerUpTimer);
         }
