@@ -72,6 +72,10 @@ public class PlayerMovement : MonoBehaviour
             PowerUpObject.transform.GetChild(0).GetComponent<PowerUp>().setTime(1);
             Destroy(PowerUpObject, powerUpTimer);
         }
+        else if (hitInfo.gameObject.tag == "end")
+        {
+            GameOver.gameOverScreen();
+        }
     }
 
 

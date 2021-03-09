@@ -58,6 +58,18 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+		Vector3 dir = Input.mousePosition - pos;
+
+        if (!m_FacingRight && dir.x > 0)
+        {
+			Flip();
+        }
+		else if (m_FacingRight && dir.x < 0)
+		{
+			Flip();
+		}
+
 	}
 
 
@@ -110,18 +122,7 @@ public class CharacterController2D : MonoBehaviour
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
+
 		}
 		// If the player should jump...
 		if (m_Grounded && jump)
