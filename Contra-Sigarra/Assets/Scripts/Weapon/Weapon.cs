@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour
 
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject grenadePrefab;
+    
 
     // Update is called once per frame
     void Update()
@@ -16,6 +18,10 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Throw();
         }
     }
 
@@ -29,8 +35,13 @@ public class Weapon : MonoBehaviour
     }
 
     void Shoot() {
-
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+    }
+
+    void Throw() {
+        
+        Instantiate(grenadePrefab, firePoint.position, firePoint.rotation);
 
     }
 }

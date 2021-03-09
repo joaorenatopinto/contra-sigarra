@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
     public GameObject Platforms;
-
+    public GameObject PowerUpPrefab;
+    GameObject PowerUpObject;
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     bool crouch = false;
     bool PowerUp = false;
     public float powerUpTimer = 5.0f;
-    public float deltaPowerUpTimer = 0f;
+    float deltaPowerUpTimer = 0f;
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -37,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         }else if (PowerUp)
         {
             deltaPowerUpTimer += Time.fixedDeltaTime;
+            if (PowerUpObject != null)
+            {
+                PowerUpObject.transform.GetChild(0).GetComponent<PowerUp>().setTime(1-(deltaPowerUpTimer / powerUpTimer));
+            }
         }
     }
 
@@ -61,6 +66,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(hitInfo.gameObject);
             PowerUp = true;
+            Vector2 powerUpPos = new Vector2(transform.position.x, transform.position.y + 1);
+            PowerUpObject = Instantiate(PowerUpPrefab, powerUpPos, Quaternion.identity);
+            PowerUpObject.transform.parent = transform;
+            PowerUpObject.transform.GetChild(0).GetComponent<PowerUp>().setTime(1);
+            Destroy(PowerUpObject, powerUpTimer);
         }
     }
 
