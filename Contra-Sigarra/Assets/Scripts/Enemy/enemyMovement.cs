@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyMovement : MonoBehaviour
 {
 
-    public float enemySpeed = 0.1f;
+    public float enemySpeed = 0.2f;
     Vector2 rayLine;
     // Start is called before the first frame update
     void Start()
