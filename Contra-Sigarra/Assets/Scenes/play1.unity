@@ -2028,7 +2028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777894681}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.627, y: 0.012642256, z: 72.27878}
+  m_LocalPosition: {x: 0.627, y: 1, z: 72.27878}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1557424239}
@@ -2134,9 +2134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineOfSight: 4
-  shootingRange: 0
-  Bullet: {fileID: 0}
-  FiringPoint: {fileID: 1896755746}
+  speed: 2
+  shootingRange: 2
+  bullet: {fileID: 7457703057280189405, guid: d51a65d5692a1cb44b5cd2ab80889e55, type: 3}
+  firingPoint: {fileID: 1896755746}
 --- !u!1 &780462541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,7 +5362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896755746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.187, y: -0.135, z: 0}
+  m_LocalPosition: {x: -0.243, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 777894682}

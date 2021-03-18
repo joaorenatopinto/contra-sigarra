@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
     public float lineOfSight;
+    public float speed;
     public float shootingRange;
-    public GameObject Bullet;
-    public GameObject FiringPoint;
+    public GameObject bullet;
+    public GameObject firingPoint;
     private Transform player;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,9 @@ public class EnemyShooting : MonoBehaviour
     {
         float distanceToPlayer = Vector2.Distance(player.position, transform.position);
         if(distanceToPlayer < lineOfSight && distanceToPlayer > shootingRange) {    
-
+            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+        } else if (distanceToPlayer <= shootingRange) {
+            Instantiate(bullet, firingPoint.transform.position, Quaternion.identity);
         }
     }
 
