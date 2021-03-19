@@ -1459,7 +1459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &564433779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2223,7 +2223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &777894682
 Transform:
   m_ObjectHideFlags: 0
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   lineOfSight: 4
   speed: 2
   shootingRange: 2
-  bullet: {fileID: 7457703057280189405, guid: d51a65d5692a1cb44b5cd2ab80889e55, type: 3}
+  bullet: {fileID: 3791881203501039894, guid: 463af1a790c13ea45926cc19ddd496f4, type: 3}
   firingPoint: {fileID: 1896755746}
 --- !u!1 &780462541
 GameObject:
@@ -2912,12 +2912,12 @@ PrefabInstance:
     - target: {fileID: 1351758077073393493, guid: 6b721452a142ff5408dbb2bd843ee9e1,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1351758077073393493, guid: 6b721452a142ff5408dbb2bd843ee9e1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4484400227865950657, guid: 6b721452a142ff5408dbb2bd843ee9e1,
         type: 3}
