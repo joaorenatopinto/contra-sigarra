@@ -76,6 +76,10 @@ public class PlayerMovement : MonoBehaviour
         {
             GameOver.gameOverScreen();
         }
+        else if (hitInfo.gameObject.tag == "FallingPlatform")
+        {
+            hitInfo.gameObject.GetComponent<PlatformFall>().DropTrigger();
+        }
     }
 
 
