@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public GameObject bullet;
     public GameObject firingPoint;
     private Transform player;
+    public bool facingLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,25 @@ public class EnemyShooting : MonoBehaviour
         } else if (distanceToPlayer <= shootingRange) {
             Instantiate(bullet, firingPoint.transform.position, Quaternion.identity);
         }
+        FlipTowardsPlayer();
+    }
+
+    void FlipTowardsPlayer()
+    {
+        float playerDirection = player.position.x - transform.position.x; // if positive player is to the right
+
+        if (playerDirection > 0 && facingLeft) {
+            Flip();
+        } else if (playerDirection < 0 && !facingLeft)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        facingLeft = !facingLeft;
+        transform.Rotate(0, 180, 0);
     }
 
     private void OnDrawGizmosSelected() 
