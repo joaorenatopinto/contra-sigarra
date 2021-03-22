@@ -9,4 +9,9 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public static void WinScreen()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
