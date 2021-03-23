@@ -26,7 +26,7 @@ public class EnemyShooting : MonoBehaviour
         } else if (distanceToPlayer <= shootingRange) {
             Instantiate(bullet, firingPoint.transform.position, Quaternion.identity);
         }
-        FlipTowardsPlayer();
+        //FlipTowardsPlayer();
     }
 
     void FlipTowardsPlayer()
