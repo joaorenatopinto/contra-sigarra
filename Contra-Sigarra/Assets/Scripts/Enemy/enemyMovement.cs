@@ -23,6 +23,8 @@ public class enemyMovement : MonoBehaviour
             
             rayLine.x = -rayLine.x;
             enemySpeed = -enemySpeed;
+            transform.Rotate(0f, 180f, 0f);
+
         }
 
         transform.position = new Vector2(transform.position.x + this.enemySpeed * Time.fixedDeltaTime, transform.position.y);

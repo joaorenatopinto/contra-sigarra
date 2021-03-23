@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (hitInfo.gameObject.tag == "end")
         {
-            GameOver.gameOverScreen();
+            GameOver.WinScreen();
         }
         else if (hitInfo.gameObject.tag == "FallingPlatform")
         {
