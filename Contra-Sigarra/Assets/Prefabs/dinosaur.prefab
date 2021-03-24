@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3234304673994005664}
   - component: {fileID: 3234304673994005855}
   m_Layer: 2
-  m_Name: Frog
+  m_Name: dinosaur
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   health: 100
   deathEffect: {fileID: 8073412235421837705, guid: 597e1f3e7502288469b6de73ab7336e3,
     type: 3}
-  powerUpObject: {fileID: 2099396654495013523, guid: 6f6a9e9dd5dc62f419c6c024ec48f78c,
+  powerUpObject: {fileID: 4020878520774163111, guid: 21fa6c65befc2d84a96adf369430862e,
     type: 3}
   healthbar: {fileID: 1374922577218805774}
 --- !u!114 &3234304673994005855
